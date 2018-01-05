@@ -211,25 +211,25 @@ ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.s
 
 ![CompoundButton](http://cfile7.uf.tistory.com/image/24573042594724571ADAF5)
 
-- checkBox, RadioButton, ToggleButton, Switch는 CompoundButton의 자식뷰로 아래와 같은 method들을 공통적으로 가지고 있음.
+- checkBox, RadioButton, ToggleButton, Switch는 CompoundButton의 자식뷰로 아래와 같은 method들을 공통적으로 가지고 있다.
 
 - compoundButton Method
 - isChecked() : 체크 유무 상태 확인
 - setChecked(boolean checked) : 상태 설정
 - setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener listener) : 리스너 설정
-- 등등 많이 있는데, 해당 정보는 안드로이드 사이트에 다 나와 있으며, 필요할 떄 찾아서 사용하면 됨
+- 등등 많이 있는데, 해당 정보는 안드로이드 사이트에 다 나와 있으며, 필요할 떄 찾아서 사용할 것이다.
 
 ### Toggle Button
 
 ![Toggle](https://developer.android.com/images/ui/togglebutton.png?hl=ko)
-- on, off로 이루어진 위젯
+- on, off로 이루어진 위젯이다.
 
 ### Switch
 
 ![Switch](https://developer.android.com/images/ui/switch.png?hl=ko)
 
-- ToggleButton과 유사함
-- 좀 더 직관적
+- ToggleButton과 유사하다.
+- 좀 더 직관적이다.
 
 
 ### CheckBox
@@ -242,7 +242,7 @@ ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.s
 
 ![Radio Button](https://developer.android.com/images/ui/radiobuttons.png?hl=ko)
 
-- 하나의 RadioGroup안에 RadioButton이 존재한다면 중복 Check가 불가능
+- 하나의 RadioGroup안에 RadioButton이 존재한다면 중복 Check가 불가능하다.
 
 - RadioButton Api
 
@@ -270,12 +270,12 @@ int getCheckedRadioButtonId()
 ### ProgressBar
 
 - "수치 값 또는 작업 진행 상태 표시"라는 공통적인 목적
-- 상태를 나타낼 수 있는 widget
-- SetVisible을 통해 보여주거나 숨길 수 있음.
+- 상태를 나타낼 수 있는 widget이다.
+- SetVisible을 통해 보여주거나 숨길 수 있다.
 
 ### RatingBar
 
-- 평점이나 별점을 줄때 사용하는 widget
+- 평점이나 별점을 줄때 사용하는 widget이다.
 - RatingBar.OnRatingBarChangeListener 을 사용하여 변경됬을 때의 상태 값을 알 수 있다.
 
 ### Spinner
@@ -287,10 +287,10 @@ int getCheckedRadioButtonId()
 
 ![adapter](http://cfile29.uf.tistory.com/image/234AF63C58EE221508B10F)
 
-- AdapterView.OnItemSelectedListener 인터페이스와 이에 상응하는 onItemSelected() 콜백 메서드를 구현
-- Adapter를 사용하는 위젯
+- AdapterView.OnItemSelectedListener 인터페이스와 이에 상응하는 onItemSelected() 콜백 메서드를 구현한다.
+- Adapter를 사용하는 위젯이다.
 - html의 select와 비슷한 것이다. 여러개 중 하나를 선택 할수 있게 해준다.
-- ListView와 마찬가지로 adapter 객체를 이용하여 보여준다
+- ListView와 마찬가지로 adapter 객체를 이용하여 보여준다.
 
 
 

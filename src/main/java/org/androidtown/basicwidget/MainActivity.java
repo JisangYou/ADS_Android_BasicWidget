@@ -42,13 +42,13 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-
     CompoundButton.OnCheckedChangeListener checkedChangeListener
             = new CompoundButton.OnCheckedChangeListener() {
         @Override
         public void onCheckedChanged(CompoundButton compoundButton, boolean check) {
             // 토글, 스위치 처리
             switch (compoundButton.getId()) {
+
                 case R.id.toggleButton:
                     if (check) {
                         textResult.setText("토글버튼이 켜졌습니다");

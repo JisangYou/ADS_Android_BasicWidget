@@ -185,7 +185,19 @@ public class SpinnerActivity extends AppCompatActivity {
     String selectedValue = data[position];
                 textView.setText(selectedValue);
 ```
-이런식으로 spinner에서 클릭 이벤트가 일어났을 때 원하는 값을 TextView에 나타내 줄 수 있다. 
+- 이런식으로 spinner에서 클릭 이벤트가 일어났을 때 원하는 값을 TextView에 나타내 줄 수 있다. 
+
+```Java
+ArrayAdapter<String> adapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1,data);// 아답터 생성
+                                                       //시스템자원, 각 아이템하나의 레이아웃, data들     
+// -> ArrayAdapter을 타고 들어가보면
+ public ArrayAdapter(@NonNull Context context, @LayoutRes int resource, @NonNull T[] objects) {
+        this(context, resource, 0, Arrays.asList(objects));
+    } 
+
+```
+
+
 
 6. Progress Bar
 
@@ -199,22 +211,26 @@ public class SpinnerActivity extends AppCompatActivity {
 
 ![CompoundButton](http://cfile7.uf.tistory.com/image/24573042594724571ADAF5)
 
+- checkBox, RadioButton, ToggleButton, Switch는 CompoundButton의 자식뷰로 아래와 같은 method들을 공통적으로 가지고 있음.
+
 - compoundButton Method
 - isChecked() : 체크 유무 상태 확인
 - setChecked(boolean checked) : 상태 설정
 - setOnCheckedChangeListener(CompoundButton.OnCheckedChangeListener listener) : 리스너 설정
-- 등등
+- 등등 많이 있는데, 해당 정보는 안드로이드 사이트에 다 나와 있으며, 필요할 떄 찾아서 사용하면 됨
 
 ### Toggle Button
 
-- on, off로 이루어진 위젯
 ![Toggle](https://developer.android.com/images/ui/togglebutton.png?hl=ko)
+- on, off로 이루어진 위젯
 
 ### Switch
 
+![Switch](https://developer.android.com/images/ui/switch.png?hl=ko)
+
 - ToggleButton과 유사함
 - 좀 더 직관적
-![Switch](https://developer.android.com/images/ui/switch.png?hl=ko)
+
 
 ### CheckBox
 
@@ -224,19 +240,24 @@ public class SpinnerActivity extends AppCompatActivity {
 
 ### RadioGroup, RadioButton
 
+![Radio Button](https://developer.android.com/images/ui/radiobuttons.png?hl=ko)
+
+- 하나의 RadioGroup안에 RadioButton이 존재한다면 중복 Check가 불가능
+
 - RadioButton Api
 
 ```Java
 void clearCheck()
 int getCheckedRadioButtonId()
 ```
-![Radio Button](https://developer.android.com/images/ui/radiobuttons.png?hl=ko)
-- 하나의 RadioGroup안에 RadioButton이 존재한다면 중복 Check가 불가능
+
+
 
 ### SeekBar
 - 시크바는 ProgressBar를 확장하여 사용자가 터치로 상태를 변경할 수 있도록 한 뷰이다. 
 - 시크바는 볼륨 조절이나 화면 밝기 조절 등에 사용할 수 있으며 발생된 이벤트는 SeekBar.OnSeekBarChangeListener 인터페이스를 통해 처리할 수 있다.
 
+```Java
 - onStartTrackingTouch()   :  최초에 탭하여 드래그 시작할때 발생
 - onProgressChanged() : 드래그 하는 중에 발생
 - onStopTrackingTouch() : 드래그를 멈출때 발생
@@ -244,7 +265,7 @@ int getCheckedRadioButtonId()
 - SeekBar 를 레이아웃에 넣을때
 - android:max  는 SeekBar 최대치일때의 수치 설정
 - android:thumb 은 SeekBar의 드래그 하는 아이콘 설정
-
+```
 
 ### ProgressBar
 
@@ -258,12 +279,24 @@ int getCheckedRadioButtonId()
 - RatingBar.OnRatingBarChangeListener 을 사용하여 변경됬을 때의 상태 값을 알 수 있다.
 
 ### Spinner
+- Spinner 모양
 
 ![spinner](https://developer.android.com/images/ui/spinner.png?hl=ko)
+
+- Spinner와 Adapter의 구조
+
+![adapter](http://cfile29.uf.tistory.com/image/234AF63C58EE221508B10F)
+
 - AdapterView.OnItemSelectedListener 인터페이스와 이에 상응하는 onItemSelected() 콜백 메서드를 구현
-- Adapter를 사용하는 위젯 
+- Adapter를 사용하는 위젯
+- html의 select와 비슷한 것이다. 여러개 중 하나를 선택 할수 있게 해준다.
+- ListView와 마찬가지로 adapter 객체를 이용하여 보여준다
 
 
+
+
+
+####출처: http://hyunssssss.tistory.com/284 [현's 블로그]
 #### 출처: http://recipes4dev.tistory.com/133?category=635576 [개발자를 위한 레시피]
 #### 출처: http://aroundck.tistory.com/282 [돼지왕 왕돼지 놀이터]
 #### 출처: http://recipes4dev.tistory.com/135 [개발자를 위한 레시피]
@@ -272,7 +305,7 @@ int getCheckedRadioButtonId()
 ## TODO
 
 - 사용법 자체는 어렵지 않으나, 내부적으로 왜 이렇게 구동이 되는지에 대해서 공부가 필요하다.
-- spinner의 adapter부분 추후에 정리 필요
+- spinner의 adapter부분은 추후에 나올 listView와 RecyclerView에서 굉장히 중요하기에, 그때 다시 정리할 것임.
 
 ## Retrospect
 
